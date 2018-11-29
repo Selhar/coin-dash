@@ -1,4 +1,6 @@
 extends Area2D
+signal hurt
+signal pickup
 
 export (int) var speed
 var velocity = Vector2()
@@ -20,6 +22,15 @@ func _process(delta):
 	else:
 		$AnimatedSprite.animation = "idle"
 
+func start(pos):
+	set_process(true)
+	position = pos
+	$AnimatedSprite.animation = "idle"
+	
+func die():
+	$AnimatedSprite.animation = "hurt"
+	set_process(false)
+
 func get_input():
 	velocity = Vector2()
 	
@@ -33,3 +44,12 @@ func get_input():
 		velocity.y += 120
 	if velocity.length() > 0:
 		velocity.normalized() * speed
+
+func _on_Player_area_entered(area):
+	if area.is_in_group("coins"):
+		area.pickup()
+		emit_signal("pickup")
+	if area.is_in_group("obstacles"):
+		emit_signal("hurt")
+		die()
+	

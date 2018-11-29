@@ -1,0 +1,64 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Coin/Coin.gd" type="Script" id=1]
+[ext_resource path="res://Coin/assets/coin-frame-1.png" type="Texture" id=2]
+[ext_resource path="res://Coin/assets/coin-frame-2.png" type="Texture" id=3]
+[ext_resource path="res://Coin/assets/coin-frame-3.png" type="Texture" id=4]
+[ext_resource path="res://Coin/assets/coin-frame-4.png" type="Texture" id=5]
+[ext_resource path="res://Coin/assets/coin-frame-5.png" type="Texture" id=6]
+[ext_resource path="res://Coin/assets/coin-frame-6.png" type="Texture" id=7]
+[ext_resource path="res://Coin/assets/coin-frame-7.png" type="Texture" id=8]
+[ext_resource path="res://Coin/assets/coin-frame-8.png" type="Texture" id=9]
+[ext_resource path="res://Coin/assets/coin-frame-9.png" type="Texture" id=10]
+[ext_resource path="res://Coin/assets/coin-frame-10.png" type="Texture" id=11]
+[ext_resource path="res://Coin/assets/coin-frame-11.png" type="Texture" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "sparkle",
+"speed": 10.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 32.3038
+
+[node name="Coin" type="Area2D" index="0" groups=[
+"coins",
+]]
+
+position = Vector2( 29.8252, 31 )
+scale = Vector2( 0.9375, 0.96875 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+position = Vector2( -1, -1.51613 )
+scale = Vector2( 0.62, 0.609677 )
+frames = SubResource( 1 )
+animation = "sparkle"
+frame = 5
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -0.970067, -1.55583 )
+scale = Vector2( 0.958989, 0.935787 )
+shape = SubResource( 2 )
+
+

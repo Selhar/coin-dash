@@ -61,7 +61,7 @@ position = Vector2( -0.631407, 9.91735 )
 scale = Vector2( 1.90394, 1.98347 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
+frame = 3
 playing = true
 offset = Vector2( 0, -5 )
 
@@ -71,5 +71,7 @@ shape = SubResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
 
 

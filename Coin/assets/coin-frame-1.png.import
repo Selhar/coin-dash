@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coin-frame-9.png-325ae8d9ac414e140360df6d91b90cea.stex"
+path="res://.import/coin-frame-1.png-aa8e4af26b8f2e6a98b92fb29fd4e9b9.stex"
 
 [deps]
 
-source_file="res://assets/coin/coin-frame-9.png"
-dest_files=[ "res://.import/coin-frame-9.png-325ae8d9ac414e140360df6d91b90cea.stex" ]
+source_file="res://Coin/assets/coin-frame-1.png"
+dest_files=[ "res://.import/coin-frame-1.png-aa8e4af26b8f2e6a98b92fb29fd4e9b9.stex" ]
 
 [params]
 
@@ -25,5 +25,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
